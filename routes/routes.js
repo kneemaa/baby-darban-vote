@@ -1,8 +1,8 @@
 const controller = require('../controllers/genderControllers')
 
-const routes = function(app){
+const routes = (app) => {
+  app.post('/api/vote', controller.vote)
   app.get('/api/genders', controller.findAll)
-  app.get('/api/genders/:gender', controller.findByGender)
 }
 
 module.exports = routes

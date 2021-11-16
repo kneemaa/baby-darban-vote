@@ -1,8 +1,9 @@
 import React from "react"
+import "../App.css"
 
 export const PollResults = (props) => {
   return (
-      <div>
+      <div className="PollResults">
         <h2> Poll Results! </h2>
         <p>Boys: {props.boys}</p>
         <p>Girls: {props.girls}</p>
