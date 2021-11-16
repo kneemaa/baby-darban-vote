@@ -4,35 +4,30 @@ import API from "../utils/api"
 import "../App.css"
 
 class PollQuestion extends Component {
-
   state = {
     author: "",
     gender: ""
   }
 
-  setGender(event) {
-    // console.log(event.target.value)
-    this.setState({guess:event.target.value})
-  }
-
+  // cast vote by sending the Post call to the server
   castVote = event => {
+    // https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault 
     event.preventDefault()
+
+    // if the author and gender have both been selected in the form can we cast the ballot
     if (this.state.author && this.state.gender) {
       API.vote({
         gender: this.state.gender,
         author: this.state.author
       })
+      // good practice to have a then statement if having a .catch
       .then(res => console.log('vote cast for ' + this.state.author))
+      // if there's an error, 'catch' it and console.log it
       .catch(err => console.log(err))
     }
   }
 
-  postCastedVote = event => {
-    const { name, value } = event.target
-    this.setState({
-      [name]: value
-    })
-  }
+  // used to update the state of what the form is filled out as
   postCastedVote = event => {
     const { name, value } = event.target
     this.setState({
@@ -40,8 +35,11 @@ class PollQuestion extends Component {
     })
   }
 
+  // what to do when the formbtn is clicked
   onCastBallot = (event) => {
+    // cast the vote function is called
     this.castVote(event)
+    // ballotCast state is updated
     this.props.voteCallback({ballotCast: true})
     event.preventDefault()
   }

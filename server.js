@@ -3,10 +3,12 @@ const bodyParser = require("body-parser")
 const express = require("express")
 const app = express()
 const logger = require("morgan")
+
+// process.env.PORT gets the port from the environment variable if it exists
+// we will be using this for Heroku
 const PORT = process.env.PORT || 3001
 
-const countDownDate = new Date("Nov 15, 2021 10:00:00").getTime()
-
+// Enable better logging in the server output
 app.use(logger('dev'))
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,6 +18,8 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 require("./routes/routes.js")(app)
 
+// process.env.MONGODB_URI gets the port from the environment variable if it exists
+// we will be using this for Heroku
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gender")
 
 app.listen(PORT, function() {
