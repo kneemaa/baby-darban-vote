@@ -41,3 +41,11 @@
   color: red;
   font-size: 18px;
 }
+
+.PollQuestion {
+  background-color: lightblue;
+}
+
+.PollResults {
+  background-color: lightgreen;
+}

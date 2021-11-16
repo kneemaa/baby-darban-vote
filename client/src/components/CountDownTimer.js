@@ -15,8 +15,8 @@ export const CountDownTimer = (props) => {
       return <span className="Countdown">{days}:{hours}:{minutes}:{seconds}</span>;
     }
   }
-  console.log(props)
+  
   return (
-    <Countdown date={Date.now() + props.timeLeft} renderer={renderer}/>
+    <Countdown daysInHours={true} date={Date.now() + props.timeLeft} renderer={renderer}/>
   )
 }
