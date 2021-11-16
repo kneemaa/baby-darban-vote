@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import API from "../../utils/api"
-import PollResults from "../../components/PollResults"
+import {PollResults} from "../../components/PollResults"
 import PollQuestion from "../../components/PollQuestion"
 
 class Home extends Component {
@@ -23,7 +23,6 @@ class Home extends Component {
 
   breakDownGender() {
     const genders = this.state.genders
-    console.log(genders)
     for (let entry in genders) {
       if (genders[entry].gender === 'girl') {
         this.setState((state) => {
@@ -38,11 +37,12 @@ class Home extends Component {
       }
     }
   }
+
   render() {
     return (
       <div>
         <PollQuestion/>
-        <PollResults/>
+        <PollResults boys={this.state.boys} girls={this.state.girls}/>
       </div>
     )
   }
