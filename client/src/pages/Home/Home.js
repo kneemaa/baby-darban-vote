@@ -23,6 +23,7 @@ class Home extends Component {
 
   // when this component mounts, run these functions
   componentDidMount() {
+    console.log(this.state.endTime)
     this.loadResults()
     this.getTimeLeft()
   };
