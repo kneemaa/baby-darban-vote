@@ -3,11 +3,20 @@ import CanvasJSReact, {CanvasJS, CanvasJSChart} from "canvasjs-react-charts"
 
 class Chart extends Component {
   options() {
+    CanvasJS.addColorSet("genderShades",
+      [//colorSet Array
+        // light-blue
+        "#ADD8E6", 
+        // light-pink
+        "#ffb6c1"               
+      ]);
+
     return {
+      colorSet: 'genderShades',
       animationEnabled: true,
       theme: "light2",
       title:{
-        text: "Gender Guesses"
+        text: "Guesses"
       },
       axisX: {
         title: "Gender",
