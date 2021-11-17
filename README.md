@@ -1,0 +1,11 @@
+# Directories and files of interest
+- `/client/src/components`
+  - These are the components that build the Home page
+- `/client/src/pages`
+  - These are the pages we serve, Home is the default and NoMatch is our 404 page
+- `/client/src/utils`
+  - How the Client calls the backend's api
+- `/client/src/index.js`
+  - How we route to Home or the 404 Page
+- `/client/src/App.css`
+  - The default CSS, these can be relocated
