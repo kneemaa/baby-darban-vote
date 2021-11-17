@@ -14,12 +14,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "canvasjs-react-charts": "^1.0.5",
+    "concurrently": "^6.4.0",
     "countdown-timer-react": "^0.1.2",
     "express": "^4.17.1",
     "mongoose": "^6.0.12",
