@@ -18,12 +18,12 @@ class Home extends Component {
     gender: "",
     author: "",
     ballotCast: false,
-    endTime: process.env.ENDTIME || "2025-11-18 16:00:00"
+    // 5 pm on sunday
+    endTime: "2021-11-21 17:00:00"
   }
 
   // when this component mounts, run these functions
   componentDidMount() {
-    console.log(this.state.endTime)
     this.loadResults()
     this.getTimeLeft()
   };

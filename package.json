@@ -8,7 +8,9 @@
     "client": "node scripts/start-client.js",
     "server": "node server.js",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "installDeps": "npm install && cd client && npm install"
+    "installDeps": "npm install && cd client && npm install",
+    "dev": "webpack --config webpack.config-dev.js",
+    "webpack:deploy": "webpack --config webpack.config-prod.js"
   },
   "keywords": [],
   "author": "",
