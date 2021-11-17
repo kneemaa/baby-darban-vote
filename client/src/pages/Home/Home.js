@@ -18,12 +18,11 @@ class Home extends Component {
     gender: "",
     author: "",
     ballotCast: false,
-    endTime: process.env.REACT_APP_ENDTIME || "2021-11-18 16:00:00"
+    endTime: process.env.REACT_APP_ENDTIME || "2025-11-18 16:00:00"
   }
 
   // when this component mounts, run these functions
   componentDidMount() {
-    console.log(process.env.REACT_APP_ENDTIME)
     console.log(this.state.endTime)
     this.loadResults()
     this.getTimeLeft()
