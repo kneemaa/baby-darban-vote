@@ -3,6 +3,7 @@ const bodyParser = require("body-parser")
 const express = require("express")
 const app = express()
 const logger = require("morgan")
+const path = require('path')
 
 // process.env.PORT gets the port from the environment variable if it exists
 // we will be using this for Heroku
