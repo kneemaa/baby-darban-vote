@@ -18,7 +18,7 @@ class Home extends Component {
     gender: "",
     author: "",
     ballotCast: false,
-    endTime: "2021-11-16 16:00:00"
+    endTime: process.env.REACT_APP_ENDTIME || "2021-11-18 16:00:00"
   }
 
   // when this component mounts, run these functions
