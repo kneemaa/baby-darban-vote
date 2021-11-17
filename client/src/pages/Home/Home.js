@@ -23,6 +23,8 @@ class Home extends Component {
 
   // when this component mounts, run these functions
   componentDidMount() {
+    console.log(process.env.REACT_APP_ENDTIME)
+    console.log(this.state.endTime)
     this.loadResults()
     this.getTimeLeft()
   };
