@@ -19,7 +19,7 @@ class Home extends Component {
     author: "",
     ballotCast: false,
     // 5 pm on sunday
-    endTime: "2021-11-21 17:00:00"
+    endTime: process.env.ENDTIME || "2021-11-21 17:00:00"
   }
 
   // when this component mounts, run these functions
