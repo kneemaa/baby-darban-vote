@@ -8,8 +8,7 @@
     "client": "node scripts/start-client.js",
     "server": "node server.js",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "installDeps": "npm install && cd client && npm install",
-    "build": "cd client && npm run build"
+    "installDeps": "npm install && cd client && npm install"
   },
   "keywords": [],
   "author": "",
