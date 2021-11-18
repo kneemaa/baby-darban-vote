@@ -11,5 +11,8 @@ export default {
   },
   reveal: () => {
     return axios.get("/api/reveal")
+  },
+  findWinners: (reveal) => {
+    return axios.get("/api/winners/" + reveal)
   }
 };

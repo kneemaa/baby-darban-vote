@@ -1,11 +1,11 @@
 import React, { Component } from "react"
 import API from "../../utils/api"
 import Chart from "../../components/Chart/Chart"
-// import { CircleTimer } from "../../components/CircleTimer"
 import PollQuestion from "../../components/PollQuestion/PollQuestion.js"
 import {CountDownTimer} from "../../components/CountDownTimer/countdowntimer"
 import {Announce} from "../../components/Announce/Announce.js"
 import { Footer } from "../../components/Footer"
+import { List, ListItem } from "../../components/List";
 import moment from "moment"
 import Cookies from 'universal-cookie'
 import "../../App.css"
@@ -14,6 +14,7 @@ class Home extends Component {
   // initialize the state with the values we want to manage
   state = {
     genders: [],
+    winners: [],
     girls: 0,
     boys: 0,
     timeLeft: 1000,
@@ -22,7 +23,7 @@ class Home extends Component {
     reveal: "", 
     ballotCast: false,
     // 5 pm on sunday
-    endTime: process.env.ENDTIME || "2021-11-16 17:00:00"
+    endTime: process.env.ENDTIME || "2021-11-21 17:00:00"
   }
 
   // when this component mounts, run these functions
@@ -47,11 +48,16 @@ class Home extends Component {
     
     if (this.state.timeLeft >= 0) {
       API.reveal()
-        .then(res => this.setState({reveal: res.data.result}))
+        .then(res => {
+          this.setState({reveal: res.data.result})
+          
+          API.findWinners(res.data.result)
+            .then(win => this.setState({winners: win.data}))
+            .catch(err => console.log(err))
+        })
         // if there's an error, 'catch' it and console.log it
         .catch(err => console.log(err))
     }
-    
   }
 
   // lets count the votes
@@ -103,7 +109,7 @@ class Home extends Component {
 <div className="grid-cards">
 
   <div className="grid-card">
-
+  
   </div>
   
   <div className="grid-card">
@@ -122,13 +128,21 @@ class Home extends Component {
                 {/* we are passing custom props called 'boys' and 'girls' to the Chart component to be used in there */}
                 <Chart boys={this.state.boys} girls={this.state.girls}/>
                 <Announce reveal={this.state.reveal}/>
+                <List>
+                {this.state.winners.map(winner => (
+                  <ListItem >
+                      <strong>
+                        {winner.author}
+                      </strong>
+                  </ListItem>
+                ))}
+              </List>
               </div>
             ) : (<PollQuestion voteCallback={this.handleCastedVote}/>)}
           </div>
         ) : (
           <div>
             <CountDownTimer timeLeft={this.state.timeLeft * 1000}/>
-            {/* <CircleTimer endTime={this.state.endTime}/> */}
             {/* if the vote has been cast show the chart, otherwise show the Poll */}
             {!this.state.ballotCast ? ( 
                 <PollQuestion voteCallback={this.handleCastedVote}/>
