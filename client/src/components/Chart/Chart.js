@@ -20,11 +20,9 @@ class Chart extends Component {
         text: "Guesses"
       },
       axisX: {
-        title: "Gender",
         reversed: true,
       },
       axisY: {
-        title: "Number Of Votes",
         includeZero: true,
         labelFormatter: this.addSymbols
       },

@@ -3,7 +3,8 @@ import API from "../../utils/api"
 import Chart from "../../components/Chart/Chart"
 import { CircleTimer } from "../../components/CircleTimer"
 import PollQuestion from "../../components/PollQuestion/PollQuestion.js"
-import {Announce} from "../../components/Announce/Announce"
+import {CountDownTimer} from "../../components/CountDownTimer/countdowntimer"
+import {Announce} from "../../components/Announce/Announce.js"
 import { Footer } from "../../components/Footer"
 import moment from "moment"
 import Cookies from 'universal-cookie'
@@ -93,10 +94,12 @@ class Home extends Component {
 <div className="grid-cards">
 
   <div className="grid-card">
+
   </div>
   
   <div className="grid-card">
   <div>
+    <CountDownTimer timeLeft={this.state.timeLeft * 1000}/>
         {/* ternery condition explained
           condition ? ifTrue : ifFalse
         */}
