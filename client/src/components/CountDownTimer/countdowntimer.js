@@ -13,7 +13,10 @@ export const CountDownTimer = (props) => {
       return <Completionist />;
     } else {
       // Render a countdown
-      return <span className="Countdown">{(days * 24) + hours} hours and {minutes}:{seconds}</span>;
+      return <div className="count-down-timer">
+              <p> Revealing the Gender in ... </p>
+              <span className="Countdown">{days} days | {hours} hours | {minutes} minutes | {seconds} seconds</span>
+            </div>
     }
   }
 

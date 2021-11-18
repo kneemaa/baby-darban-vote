@@ -99,7 +99,6 @@ class Home extends Component {
   
   <div className="grid-card">
   <div>
-    <CountDownTimer timeLeft={this.state.timeLeft * 1000}/>
         {/* ternery condition explained
           condition ? ifTrue : ifFalse
         */}
@@ -119,7 +118,8 @@ class Home extends Component {
           </div>
         ) : (
           <div>
-            <CircleTimer endTime={this.state.endTime}/>
+            <CountDownTimer timeLeft={this.state.timeLeft * 1000}/>
+            {/* <CircleTimer endTime={this.state.endTime}/> */}
             {/* if the vote has been cast show the chart, otherwise show the Poll */}
             {!this.state.ballotCast ? ( 
                 <PollQuestion voteCallback={this.handleCastedVote}/>
