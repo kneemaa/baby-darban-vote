@@ -89,7 +89,14 @@ class Home extends Component {
   // now lets render our DOM
   render() {
     return (
-      <div>
+//main container with 3 columns/cards      
+<div className="grid-cards">
+
+  <div className="grid-card">
+  </div>
+  
+  <div className="grid-card">
+  <div>
         {/* ternery condition explained
           condition ? ifTrue : ifFalse
         */}
@@ -120,10 +127,25 @@ class Home extends Component {
           </div>
           )
         }
-        <div>
-          <Footer/>
-          </div>
       </div>
+  </div>
+
+  <div className="grid-card">
+  </div>
+ 
+  <div className="grid-card">
+  </div>
+  <div className="grid-card">
+    <Footer/>
+  </div>
+  <div className="grid-card">
+  </div>
+
+
+</div>
+
+
+      
     )
   }
 }
