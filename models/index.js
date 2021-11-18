@@ -1,3 +1,4 @@
 module.exports = {
-  Gender: require("./gender")
+  Gender: require("./gender"),
+  Reveal: require("./reveal")
 }

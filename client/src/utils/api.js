@@ -8,5 +8,8 @@ export default {
   // does a POSt to the /api/vote endpoint of the server to cast a vote
   vote: (vote) => {
     return axios.post("/api/vote", vote)
+  },
+  reveal: () => {
+    return axios.get("/api/reveal")
   }
 };
