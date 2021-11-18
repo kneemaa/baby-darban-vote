@@ -1,0 +1,11 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+	justify-content: space-around;
+  font-size: 30px;
+}

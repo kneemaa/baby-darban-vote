@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import { FormBtn, Input } from "../components/Form"
-import API from "../utils/api"
-import "../App.css"
-import "../bootstrap.css"
+import { FormBtn, Input } from "../../components/Form"
+import API from "../../utils/api"
+import "./PollQuestion.css"
+import "../../bootstrap.css"
 
 class PollQuestion extends Component {
   state = {
@@ -48,20 +48,12 @@ class PollQuestion extends Component {
   render() {
     return (
       <div className="container alert form-wrap">
-        {/* <div class="card border-secondary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h4 class="card-title">Secondary card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div> */}
-
-        <div className="PollQuestion">
-          <div class="card-header">
-          <h2>What gender do you think Baby Darban will be?</h2></div>
+        <div className="poll-question">
+          <div className="card-header">
+            <h2>What gender do you think Baby Darban will be?</h2>
             <form>
-            <p class="card-text">
-              <label class="col-form-label mt-4" for="inputDefault">
+            <div className="card-text">
+              <label className="col-form-label mt-4">
               <Input 
                 value={this.state.author}
                 onChange={this.postCastedVote}
@@ -69,20 +61,18 @@ class PollQuestion extends Component {
                 name="author"
               />
               </label>
-            </p>
+            </div>
               <div onChange={this.postCastedVote.bind(this)}>          
                 <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" value="boy" name="gender"/> Boy
-                <p></p>
+                <p/>
                 <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" value="girl" name="gender"/> Girl
               </div>
-              <p className="card-text">
-                <FormBtn onClick={this.onCastBallot}>
-                Cast Vote
-                </FormBtn>
-              </p>
+              <div className="card-text">
+                <FormBtn onClick={this.onCastBallot}>Cast Vote</FormBtn>
+              </div>
             </form>
           </div>
-
+        </div>
       </div>
     )
   }

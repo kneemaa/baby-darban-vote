@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 import API from "../../utils/api"
-import Chart from "../../components/Chart"
+import Chart from "../../components/Chart/Chart"
 import { CircleTimer } from "../../components/CircleTimer"
-import PollQuestion from "../../components/PollQuestion"
-import {Announce} from "../../components/Announce"
+import PollQuestion from "../../components/PollQuestion/PollQuestion.js"
+import {Announce} from "../../components/Announce/Announce"
+import { Footer } from "../../components/Footer"
 import moment from "moment"
 import Cookies from 'universal-cookie'
 import "../../App.css"
@@ -119,6 +120,9 @@ class Home extends Component {
           </div>
           )
         }
+        <div>
+          <Footer/>
+          </div>
       </div>
     )
   }
