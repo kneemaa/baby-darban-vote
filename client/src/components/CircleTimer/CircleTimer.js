@@ -36,7 +36,7 @@ export const CircleTimer = (props) => {
   const daysDuration = days * daySeconds;
 
   return (
-    <div className="CircleTimer">
+    <div className="circle-timer">
       <CountdownCircleTimer
         {...timerProps}
         colors={[["#7E2E84"]]}

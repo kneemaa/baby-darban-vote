@@ -4,8 +4,20 @@
   width: 100%;
 }
 
-.footer-content {
-  display: flex;
-	justify-content: space-around;
-  font-size: 30px;
+/* starting at iPhone */
+@media (min-width: 375px) {
+  .footer-text {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+  }
+}
+
+/* starting at ipad*/
+@media (min-width: 768px) {
+  .footer-text {
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+  }
 }

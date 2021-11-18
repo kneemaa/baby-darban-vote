@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import CanvasJSReact, {CanvasJS, CanvasJSChart} from "canvasjs-react-charts"
-
+import "./Chart.css"
 class Chart extends Component {
   options() {
     CanvasJS.addColorSet("genderShades",
@@ -13,8 +13,9 @@ class Chart extends Component {
 
     return {
       colorSet: 'genderShades',
+      backgroundColor: null,
       animationEnabled: true,
-      theme: "light2",
+      theme: "dark2",
       title:{
         text: "Guesses"
       },
@@ -39,7 +40,7 @@ class Chart extends Component {
 
   render() {
 		return (
-      <div>
+      <div className="chart">
         <CanvasJSChart options={this.options()} boys={this.props.boys}/>
       </div>
 		);

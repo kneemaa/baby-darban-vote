@@ -1,4 +1,4 @@
-.CircleTimer {
+.circle-timer {
   display: flex;
   justify-content: space-around;
   font-family: sans-serif;
@@ -8,4 +8,20 @@
 
 .time {
   font-size: 32px;
+}
+
+/* starting at iPhone */
+@media (min-width: 375px) {
+  .circle-timer {
+    padding-top: 10px;
+  }
+}
+
+/* starting at ipad*/
+@media (min-width: 768px) {
+  /* .footer-text {
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+  } */
 }
