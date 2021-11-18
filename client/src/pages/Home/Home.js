@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import API from "../../utils/api"
 import Chart from "../../components/Chart/Chart"
-import { CircleTimer } from "../../components/CircleTimer"
+// import { CircleTimer } from "../../components/CircleTimer"
 import PollQuestion from "../../components/PollQuestion/PollQuestion.js"
 import {CountDownTimer} from "../../components/CountDownTimer/countdowntimer"
 import {Announce} from "../../components/Announce/Announce.js"
@@ -19,9 +19,10 @@ class Home extends Component {
     timeLeft: 1000,
     gender: "",
     author: "",
+    reveal: "", 
     ballotCast: false,
     // 5 pm on sunday
-    endTime: process.env.ENDTIME || "2021-11-21 17:00:00"
+    endTime: process.env.ENDTIME || "2021-11-16 17:00:00"
   }
 
   // when this component mounts, run these functions
@@ -43,6 +44,14 @@ class Home extends Component {
       if (cookies.get('ballotCast')) {
         this.setState({ballotCast: true})
       }
+    
+    if (this.state.timeLeft >= 0) {
+      API.reveal()
+        .then(res => this.setState({reveal: res.data.result}))
+        // if there's an error, 'catch' it and console.log it
+        .catch(err => console.log(err))
+    }
+    
   }
 
   // lets count the votes
@@ -98,7 +107,7 @@ class Home extends Component {
   </div>
   
   <div className="grid-card">
-  <div>
+    <div>
         {/* ternery condition explained
           condition ? ifTrue : ifFalse
         */}
@@ -112,7 +121,7 @@ class Home extends Component {
               <div>
                 {/* we are passing custom props called 'boys' and 'girls' to the Chart component to be used in there */}
                 <Chart boys={this.state.boys} girls={this.state.girls}/>
-                <Announce/>
+                <Announce reveal={this.state.reveal}/>
               </div>
             ) : (<PollQuestion voteCallback={this.handleCastedVote}/>)}
           </div>
@@ -131,7 +140,7 @@ class Home extends Component {
           )
         }
       </div>
-  </div>
+    </div>
 
   <div className="grid-card">
   </div>
