@@ -47,8 +47,6 @@ class PollQuestion extends Component {
 
   render() {
     return (
-      <div className="grid-cards">
-        <div className="grid-card"></div>
         <div className="grid-card">
           <div className="container alert form-wrap">
             <div className="poll-question">
@@ -72,8 +70,6 @@ class PollQuestion extends Component {
             </div>
           </div>
         </div>
-        <div className="grid-card"></div>
-      </div>
     )
   }
 }
