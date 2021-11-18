@@ -132,9 +132,15 @@ class Home extends Component {
 
   <div className="grid-card">
   </div>
-  <div>
+ 
+  <div className="grid-card">
+  </div>
+  <div className="grid-card">
     <Footer/>
   </div>
+  <div className="grid-card">
+  </div>
+
 
 </div>
 

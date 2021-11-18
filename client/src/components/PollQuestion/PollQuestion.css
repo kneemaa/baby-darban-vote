@@ -9,13 +9,3 @@
   align-content: center;
   margin: 2em;
 }
-
-.grid-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  text-align: center;
-}
-
-.grid-card {
-  padding: 10px;
-}
