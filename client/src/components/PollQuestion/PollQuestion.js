@@ -49,11 +49,9 @@ class PollQuestion extends Component {
     return (
       <div className="container alert form-wrap">
         <div className="poll-question">
-          <div className="card-header">
             <h2>What gender do you think Baby Darban will be?</h2>
             <form>
-            <div className="card-text">
-              <label className="col-form-label mt-4">
+              <label className="col-form-label mt-2">
               <Input 
                 value={this.state.author}
                 onChange={this.postCastedVote}
@@ -61,18 +59,14 @@ class PollQuestion extends Component {
                 name="author"
               />
               </label>
-            </div>
               <div onChange={this.postCastedVote.bind(this)}>          
-                <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" value="boy" name="gender"/> Boy
+                <input type="radio" className="form-check-input" id="optionsRadios1" value="boy" name="gender" /> Boy
                 <p/>
-                <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" value="girl" name="gender"/> Girl
+                <input type="radio" className="form-check-input" id="optionsRadios2" value="girl" name="gender"/> Girl
               </div>
-              <div className="card-text">
                 <FormBtn onClick={this.onCastBallot}>Cast Vote</FormBtn>
-              </div>
             </form>
           </div>
-        </div>
       </div>
     )
   }
