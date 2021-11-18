@@ -36,25 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.Countdown {
-  color: red;
-  font-size: 18px;
-  padding-bottom: 10%;
-}
-
-.PollQuestion {
-  padding: 2em;
-
-}
-
-.PollResults {
-  background-color: lightgreen;
-}
-
-.form-wrap {
-  display: block;
-  text-align: justify;
-  align-content: center;
-  margin: 2em;
-}
