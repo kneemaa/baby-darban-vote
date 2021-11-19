@@ -23,7 +23,7 @@ class Home extends Component {
     reveal: "", 
     ballotCast: false,
     // 5 pm on sunday
-    endTime: process.env.ENDTIME || "2021-11-16 17:00:00"
+    endTime: process.env.ENDTIME || "2021-11-17 17:00:00"
   }
 
   // when this component mounts, run these functions
@@ -105,57 +105,58 @@ class Home extends Component {
   // now lets render our DOM
   render() {
     return (
-//main container with 3 columns/cards      
-<div className="container">
-  <div className="col-lg-4">
-    <div className="main-body">
-        {/* ternery condition explained
-          condition ? ifTrue : ifFalse
-        */}
-        {/* if the timeLeft in the state is equal or less than 0 move on, go to the else condition*/}
-        {this.state.timeLeft <= 0 ? (
-          <div>
-            {/* if the ballot HAS been cast, show the Chart Results and the Announcement
-              If the ballot has not been cast, show the PollQuestion 
-            */}
-            {this.state.ballotCast ? (
-              <div>
-                <Announce reveal={this.state.reveal}/>
-                <span>Who guessed right?</span>
-                <List>
-                {this.state.winners.map(winner => (
-                  <ListItem key={winner._id}>
-                      <strong>
-                        {winner.author}
-                      </strong>
-                  </ListItem>
-                ))}
-              </List>
-              </div>
-            ) : (<PollQuestion voteCallback={this.handleCastedVote}/>)}
+      //main container with 3 columns/cards      
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-4"></div>
+          <div className="col-sm-4 main-body">
+                {/* ternery condition explained
+                  condition ? ifTrue : ifFalse
+                */}
+                {/* if the timeLeft in the state is equal or less than 0 move on, go to the else condition*/}
+                {this.state.timeLeft <= 0 ? (
+                  <div>
+                    {/* if the ballot HAS been cast, show the Chart Results and the Announcement
+                      If the ballot has not been cast, show the PollQuestion 
+                    */}
+                    {this.state.ballotCast ? (
+                      <div>
+                        <Announce reveal={this.state.reveal}/>
+                        <span>Who guessed right?</span>
+                        <List>
+                        {this.state.winners.map(winner => (
+                          <ListItem key={winner._id}>
+                              <strong>
+                                {winner.author}
+                              </strong>
+                          </ListItem>
+                        ))}
+                      </List>
+                      </div>
+                    ) : (<PollQuestion voteCallback={this.handleCastedVote}/>)}
+                  </div>
+                ) : (
+                  <div>
+                    <CountDownTimer timeLeft={this.state.timeLeft * 1000}/>
+                    {/* if the vote has been cast show the chart, otherwise show the Poll */}
+                    {!this.state.ballotCast ? ( 
+                        <PollQuestion voteCallback={this.handleCastedVote}/>
+                      ) : (
+                        <Chart boys={this.state.boys} girls={this.state.girls}/>
+                      )
+                    }
+                  </div>
+                  )
+                }
           </div>
-        ) : (
-          <div>
-            <CountDownTimer timeLeft={this.state.timeLeft * 1000}/>
-            {/* if the vote has been cast show the chart, otherwise show the Poll */}
-            {!this.state.ballotCast ? ( 
-                <PollQuestion voteCallback={this.handleCastedVote}/>
-              ) : (
-                <Chart boys={this.state.boys} girls={this.state.girls}/>
-              )
-            }
+          <div className="col-sm-4"></div>
+        </div>
+        <div className="row">
+          <div className="col-sm-12">
+            <Footer/>
           </div>
-          )
-        }
+        </div>
       </div>
-    </div>
-  <div className="col-lg-6">
-    <Footer/>
-  </div>
-</div>
-
-
-      
     )
   }
 }

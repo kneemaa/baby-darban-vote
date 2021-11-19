@@ -1,9 +1,9 @@
 import React from "react"
+import "./Announce.css"
 
 export const Announce = (props) => {
   return (
-    <div>
-      <p>we're having baby {props.reveal}!</p>
+    <div className="answer">{props.reveal}!
     </div>
   )
 }
