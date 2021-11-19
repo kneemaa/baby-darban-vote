@@ -1,3 +1,68 @@
 .count-down-timer {
-  padding: 35px;
+  padding-top: 35px;
+}
+
+.count-down-labels {
+  display: flex;
+}
+
+.count-down-number {
+  display: flex;
+  justify-content: space-around;
+}
+
+.countdown-title {
+  display: flex;
+  justify-content: space-around;
+}
+
+.count-down-label {
+  display: flex;
+  justify-content: space-around;
+}
+
+.count-down-label {
+  display: flex;
+  justify-content: space-around;
+}
+
+.count-down-label {
+  display: flex;
+  justify-content: space-around;
+}
+
+.count-down-label {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* starting at iPhone */
+@media (min-width: 375px) {
+  .time-labels {
+    display: flex;
+    justify-content: space-around;
+    width: 25%
+  }
+
+  .time-values {
+    display: flex;
+    justify-content: space-around;
+    width: 25%
+  }
+}
+
+/* starting at ipad*/
+@media (min-width: 768px) {
+  /* .time-labels {
+    display: flex;
+    justify-content: space-around;
+    width: 25%
+  }
+
+  .time-values {
+    display: flex;
+    justify-content: space-around;
+    width: 25%
+  } */
 }

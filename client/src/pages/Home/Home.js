@@ -108,7 +108,7 @@ class Home extends Component {
       //main container with 3 columns/cards      
       <div className="container">
         <div className="row">
-          <div className="col-sm-4"></div>
+          <div className="col-sm-4 side-col"></div>
           <div className="col-sm-4 main-body">
                 {/* ternery condition explained
                   condition ? ifTrue : ifFalse
@@ -149,7 +149,7 @@ class Home extends Component {
                   )
                 }
           </div>
-          <div className="col-sm-4"></div>
+          <div className="col-sm-4 side-col"></div>
         </div>
         <div className="row">
           <div className="col-sm-12">
