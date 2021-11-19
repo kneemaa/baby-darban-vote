@@ -1,5 +1,12 @@
 .footer {
   text-align: center;
+  margin-top: 2em;
+}
+
+.btn-link {
+  font-weight: 400;
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* starting at iPhone */
@@ -10,11 +17,11 @@
     font-size: 20px;
   }
 
-  .calendar-save {
+  /* .calendar-save {
     width: 120%;
     display: flex;
     justify-content: space-around;
-  }
+  } */
 }
 
 /* starting at ipad*/
