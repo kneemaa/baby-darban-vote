@@ -23,7 +23,7 @@ class Home extends Component {
     reveal: "", 
     ballotCast: false,
     // 5 pm on sunday
-    endTime: process.env.ENDTIME || "2021-11-21 17:00:00"
+    endTime: process.env.ENDTIME || "2021-11-16 17:00:00"
   }
 
   // when this component mounts, run these functions
@@ -106,14 +106,9 @@ class Home extends Component {
   render() {
     return (
 //main container with 3 columns/cards      
-<div className="grid-cards">
-
-  <div className="grid-card">
-  
-  </div>
-  
-  <div className="grid-card">
-    <div>
+<div className="container">
+  <div className="col-lg-4">
+    <div className="main-body">
         {/* ternery condition explained
           condition ? ifTrue : ifFalse
         */}
@@ -125,12 +120,11 @@ class Home extends Component {
             */}
             {this.state.ballotCast ? (
               <div>
-                {/* we are passing custom props called 'boys' and 'girls' to the Chart component to be used in there */}
-                <Chart boys={this.state.boys} girls={this.state.girls}/>
                 <Announce reveal={this.state.reveal}/>
+                <span>Who guessed right?</span>
                 <List>
                 {this.state.winners.map(winner => (
-                  <ListItem >
+                  <ListItem key={winner._id}>
                       <strong>
                         {winner.author}
                       </strong>
@@ -155,19 +149,9 @@ class Home extends Component {
         }
       </div>
     </div>
-
-  <div className="grid-card">
-  </div>
- 
-  <div className="grid-card">
-  </div>
-  <div className="grid-card">
+  <div className="col-lg-6">
     <Footer/>
   </div>
-  <div className="grid-card">
-  </div>
-
-
 </div>
 
 
