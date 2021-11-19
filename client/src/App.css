@@ -46,6 +46,13 @@
   padding: 10px;
 }
 
-.container {
-  
+/* starting at ipad*/
+@media (min-width: 768px) {
+ .main-body {
+  width: 70%;
+ }
+
+ .side-col {
+   width: 15%;
+ }
 }
