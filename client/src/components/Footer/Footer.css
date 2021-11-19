@@ -9,6 +9,12 @@
     justify-content: space-around;
     font-size: 20px;
   }
+
+  .calendar-save {
+    width: 120%;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 /* starting at ipad*/
