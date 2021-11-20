@@ -21,7 +21,7 @@ class Home extends Component {
     gender: "",
     author: "",
     reveal: "", 
-    ballotCast: false,
+    ballotCasted: false,
     // 5 pm on sunday
     endTime: process.env.ENDTIME || "2021-11-21 17:00:00"
   }
@@ -42,8 +42,8 @@ class Home extends Component {
 
       // set a cookie that the user has cast a ballot
       const cookies = new Cookies()
-      if (cookies.get('ballotCast')) {
-        this.setState({ballotCast: true})
+      if (cookies.get('ballotCasted')) {
+        this.setState({ballotCasted: true})
       }
     
     if (this.state.timeLeft >= 0) {
@@ -99,7 +99,7 @@ class Home extends Component {
 
     // lets set a cookie that the ballot was cast
     const cookies = new Cookies()
-    cookies.set('ballotCast', {path: '/'})
+    cookies.set('ballotCasted', {path: '/'})
   }
 
   // now lets render our DOM
@@ -119,7 +119,7 @@ class Home extends Component {
                     {/* if the ballot HAS been cast, show the Chart Results and the Announcement
                       If the ballot has not been cast, show the PollQuestion 
                     */}
-                    {this.state.ballotCast ? (
+                    {this.state.ballotCasted ? (
                       <div>
                         <Announce reveal={this.state.reveal}/>
                         <span className="table-title">Who guessed right?</span>
@@ -138,7 +138,7 @@ class Home extends Component {
                 ) : (
                   <div>
                     {/* if the vote has been cast show the chart, otherwise show the Poll */}
-                    {!this.state.ballotCast ? ( 
+                    {!this.state.ballotCasted ? ( 
                         <PollQuestion voteCallback={this.handleCastedVote}/>
                       ) : (
                         <div>
