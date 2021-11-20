@@ -22,7 +22,7 @@ class PollQuestion extends Component {
         author: this.state.author
       })
       // good practice to have a then statement if having a .catch
-      .then(res => console.log('vote cast for ' + this.state.author))
+      .then(res => console.log(this.props.voteCallback({ballotCasted: true})))
       // if there's an error, 'catch' it and console.log it
       .catch(err => console.log(err))
     }
@@ -41,7 +41,6 @@ class PollQuestion extends Component {
     // cast the vote function is called
     this.castVote(event)
     // ballotCast state is updated
-    this.props.voteCallback({ballotCast: true})
     event.preventDefault()
   }
 
@@ -50,7 +49,7 @@ class PollQuestion extends Component {
         <div className="grid-card">
           <div className="container alert form-wrap">
             <div className="poll-question">
-              <h2>What gender do you think Baby Darban is?</h2>
+              <h2>What gender do you think Baby Darban will be?</h2>
               <form>
               <label className="col-form-label mt-2">
               <Input 
