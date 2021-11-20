@@ -16,9 +16,7 @@ class Chart extends Component {
       backgroundColor: null,
       animationEnabled: true,
       theme: "dark2",
-      title:{
-        text: "Guesses"
-      },
+      title:{},
       axisX: {
         reversed: true,
       },

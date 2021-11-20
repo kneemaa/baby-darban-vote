@@ -16,7 +16,7 @@ export const CountDownTimer = (props) => {
       return <div className="count-down-timer container">
               <div className="row">
                 <div className="col-sm-12 countdown-title">
-                  <p className="countdown-title"> Revealing the Gender in ... </p>
+                  <p className="countdown-title"> Check back in ... </p>
                 </div>
               </div>
               <div className="row">

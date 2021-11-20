@@ -14,6 +14,7 @@
 .countdown-title {
   display: flex;
   justify-content: space-around;
+  font-size: 60px;
 }
 
 .count-down-label {
@@ -50,19 +51,21 @@
     justify-content: space-around;
     width: 25%
   }
+
+  .countdown-title {
+    font-size: 125%;
+  }
 }
 
 /* starting at ipad*/
 @media (min-width: 768px) {
-  /* .time-labels {
-    display: flex;
-    justify-content: space-around;
-    width: 25%
+  .countdown-title {
+    font-size: 150%;
   }
 
   .time-values {
     display: flex;
     justify-content: space-around;
     width: 25%
-  } */
+  }
 }

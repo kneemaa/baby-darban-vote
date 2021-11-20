@@ -4,7 +4,6 @@
   border-radius: 4px;
   overflow-y: scroll;
   overflow-x: hidden;
-  /* columns: 2; */
 }
 
 .list-overflow-container ul {
@@ -31,4 +30,9 @@
 
 .list-overflow-container li:last-child {
   border-bottom: none;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-around;
 }
