@@ -25,7 +25,7 @@ class Chart extends Component {
         labelFormatter: this.addSymbols
       },
       data: [{
-        type: "bar",
+        type: "doughnut",
         dataPoints: [
           { y:  this.props.boys, label: "Boy" },
           { y:  this.props.girls, label: "Girl" },
