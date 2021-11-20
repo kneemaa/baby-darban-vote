@@ -122,7 +122,7 @@ class Home extends Component {
                     {this.state.ballotCast ? (
                       <div>
                         <Announce reveal={this.state.reveal}/>
-                        <span>Who guessed right?</span>
+                        <span className="table-title">Who guessed right?</span>
                         <List>
                         {this.state.winners.map(winner => (
                           <ListItem key={winner._id}>
@@ -137,12 +137,14 @@ class Home extends Component {
                   </div>
                 ) : (
                   <div>
-                    <CountDownTimer timeLeft={this.state.timeLeft * 1000}/>
                     {/* if the vote has been cast show the chart, otherwise show the Poll */}
                     {!this.state.ballotCast ? ( 
                         <PollQuestion voteCallback={this.handleCastedVote}/>
                       ) : (
+                        <div>
+                        <CountDownTimer timeLeft={this.state.timeLeft * 1000}/>
                         <Chart boys={this.state.boys} girls={this.state.girls}/>
+                        </div>
                       )
                     }
                   </div>

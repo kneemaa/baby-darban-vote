@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Corben&display=swap');
+
+* {
+  font-family: 'Corben', cursive;
+}
+
 .App {
   text-align: center;
 }
@@ -55,4 +61,10 @@
  .side-col {
    width: 15%;
  }
+}
+
+.table-title {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
 }

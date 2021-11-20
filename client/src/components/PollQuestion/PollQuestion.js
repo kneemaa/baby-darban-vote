@@ -50,7 +50,7 @@ class PollQuestion extends Component {
         <div className="grid-card">
           <div className="container alert form-wrap">
             <div className="poll-question">
-              <h2>What gender do you think Baby Darban will be?</h2>
+              <h2>What gender do you think Baby Darban is?</h2>
               <form>
               <label className="col-form-label mt-2">
               <Input 
