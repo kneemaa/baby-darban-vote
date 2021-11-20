@@ -3,7 +3,7 @@ import API from "../../utils/api"
 import Chart from "../../components/Chart/Chart"
 import PollQuestion from "../../components/PollQuestion/PollQuestion.js"
 import {CountDownTimer} from "../../components/CountDownTimer/countdowntimer"
-import {Announce} from "../../components/Announce/Announce.js"
+import Announce from "../../components/Announce/Announce.js"
 import { Footer } from "../../components/Footer"
 import { List, ListItem } from "../../components/List";
 import moment from "moment"
