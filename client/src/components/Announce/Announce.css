@@ -19,3 +19,28 @@
 .show-reveal {
   opacity: 100%;
 }
+
+.center-button {
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
+  z-index: 100;
+  font-size: 2rem;
+}
+
+#big-font {
+  font-size: 2rem
+}
+
+#small-font {
+  font-size: 1rem
+}
+
+.center-body {
+  display: grid;
+}
+
+.center-button, .answer {
+  grid-column: 1;
+  grid-row: 1;
+}
