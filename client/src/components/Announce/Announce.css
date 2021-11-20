@@ -18,4 +18,34 @@
 
 .show-reveal {
   opacity: 100%;
+  color: #fff;
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 1em;
+  margin: 2em;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+@media (min-width: 768px) {
+  .main-body {
+   width: 70%;
+  }
+ 
+  .side-col {
+    width: 15%;
+  }
+ }

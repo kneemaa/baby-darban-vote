@@ -19,12 +19,19 @@ class Announce extends Component {
     let reveal_class = this.state.reveal ? "hide-reveal" : "show-reveal"
 
     return (
-      <div>
-        <button type="button" className={reveal_class} onClick={this.showHide.bind(this)} disabled={this.state.reveal}>
-          <span>It's A...</span><p/>
-          <span>(click to reveal)</span>
-        </button>
-        <div className={"answer " + prompt_class}>{this.props.reveal}!</div>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-4 side-col"></div>
+          <div className="col-sm-4 main-body">
+            <button type="button" className={reveal_class} onClick={this.showHide.bind(this)} disabled={this.state.reveal}>
+              <span>We are having a...</span><p/>
+              <span>(click to reveal)</span>
+            </button>
+          </div>
+          <div className="col-sm-4 side-col"></div>
+        </div>
+          <div className={"answer " + prompt_class}>{this.props.reveal}!
+          </div>
       </div>
     )
   }
