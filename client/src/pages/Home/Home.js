@@ -121,7 +121,7 @@ class Home extends Component {
                     */}
                     {this.state.ballotCasted ? (
                       <div>
-                        <Announce reveal={this.state.reveal}/>
+                        <h1 className="answer">{this.state.reveal}!</h1>
                         <span className="table-title">Who guessed right?</span>
                         <List>
                           {this.state.winners.map(winner => (
