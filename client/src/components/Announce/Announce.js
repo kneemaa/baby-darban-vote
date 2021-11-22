@@ -27,7 +27,7 @@ class Announce extends Component {
               <p/>
               <span id="small-font">(click to reveal) --> <img src="./favicon.ico"></img></span>
             </button> */}
-            <div className={"answer " + prompt_class}>{this.props.reveal}!</div>
+            <div className={"answer show-reveal"}>{this.props.reveal}!</div>
           </div>
         </div>
       </div>
