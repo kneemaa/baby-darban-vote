@@ -124,14 +124,14 @@ class Home extends Component {
                         <Announce reveal={this.state.reveal}/>
                         <span className="table-title">Who guessed right?</span>
                         <List>
-                        {this.state.winners.map(winner => (
-                          <ListItem key={winner._id}>
-                              <strong>
-                                {winner.author}
-                              </strong>
-                          </ListItem>
-                        ))}
-                      </List>
+                          {this.state.winners.map(winner => (
+                            <ListItem key={winner._id}>
+                                <strong>
+                                  {winner.author}
+                                </strong>
+                            </ListItem>
+                          ))}
+                        </List>
                       </div>
                     ) : (<PollQuestion voteCallback={this.handleCastedVote}/>)}
                   </div>

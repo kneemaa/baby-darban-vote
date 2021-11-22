@@ -6,17 +6,17 @@ class Announce extends Component {
     super()
 
     this.state = {
-      reveal: false
+      should_reveal: false
     }
   }
 
   showHide(){
-    this.setState({reveal: !this.state.reveal})
+    this.setState({reveal: !this.state.should_reveal})
   }
 
   render() {
-    let prompt_class = this.state.reveal ? "show-reveal" : "hide-reveal"
-    let reveal_class = this.state.reveal ? "hide-reveal" : "show-reveal"
+    let prompt_class = this.state.should_reveal ? "show-reveal" : "hide-reveal"
+    let reveal_class = this.state.should_reveal ? "hide-reveal" : "show-reveal"
 
     return (
       <div className="container size-color">
