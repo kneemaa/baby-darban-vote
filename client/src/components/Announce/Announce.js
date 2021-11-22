@@ -22,11 +22,11 @@ class Announce extends Component {
       <div className="container size-color">
         <div className="row announce-row">
           <div className="col-sm-12 center-body">
-            <button type="button" className={"center-button " + reveal_class} onClick={this.showHide.bind(this)} disabled={this.state.reveal}>
+            {/* <button type="button" className={"center-button " + reveal_class} onClick={this.showHide.bind(this)} disabled={this.state.reveal}>
               <span id="big-font">We are having a...</span>
               <p/>
               <span id="small-font">(click to reveal) --> <img src="./favicon.ico"></img></span>
-            </button>
+            </button> */}
             <div className={"answer " + prompt_class}>{this.props.reveal}!</div>
           </div>
         </div>
